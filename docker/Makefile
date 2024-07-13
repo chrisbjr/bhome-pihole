@@ -13,8 +13,8 @@ destroy:
 shell:
 	@docker compose exec -it pihole /bin/bash
 
-update-whitelists:
-	@docker exec pihole sh -c 'awk "{gsub(/^[[:space:]]+|[[:space:]]+$/, \"\"); if (NF) print}" /etc/pihole/whitelists.txt | xargs -I {} pihole -w {}'
+update-whitelist:
+	@docker exec pihole sh -c 'awk "{gsub(/^[[:space:]]+|[[:space:]]+$$/,\"\");if(NF)print}" /etc/pihole/whitelist.txt | xargs -I {} pihole -w {}'
 
 update-adlists:
-	@docker exec pihole cp /etc/pihole/adlists.list.txt /etc/pihole/adlists.list | pihole -g
+	@docker exec pihole cp /etc/pihole/adlists.list.txt /etc/pihole/adlists.list | docker exec pihole pihole -g
