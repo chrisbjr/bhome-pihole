@@ -9,8 +9,6 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      PIHOLE_UID: 1000
-      PIHOLE_GID: 1000
       TZ: 'Asia/Manila'
       WEBPASSWORD: '${WEBPASSWORD}'
       PIHOLE_DNS_: '1.1.1.1;1.0.0.1'
