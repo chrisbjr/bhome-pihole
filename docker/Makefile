@@ -17,4 +17,4 @@ update-whitelists:
 	@docker exec pihole sh -c 'awk "{gsub(/^[[:space:]]+|[[:space:]]+$/, \"\"); if (NF) print}" /etc/pihole/whitelists.txt | xargs -I {} pihole -w {}'
 
 update-adlists:
-	@docker exec pihole pihole -g
+	@docker exec pihole cp /etc/pihole/adlists.list.txt /etc/pihole/adlists.list | pihole -g

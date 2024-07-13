@@ -1,4 +1,4 @@
 *
 !.gitignore
-!adlists.list
-!whitelists.txt
+!adlists.list.txt
+!whitelist.txt
