@@ -4,10 +4,12 @@ First copy the `.env.example` file to `.env` and update the values as needed.
 cp .env.example .env
 ```
 
-Then make a copy of adlists.list.txt to adlists.list
+Change the contents of the .env file to match your environment.
+
+Copy the pre-configured `pihole/adlists.list` file and `pihole/whitelist.txt` to the etc-pihole directory.
 
 ```bash
-cp etc-pihole/adlists.list.txt etc-pihole/adlists.list
+cp pihole/adlists.list etc-pihole/adlists.list && cp pihole/whitelist.txt etc-pihole/whitelist.txt
 ```
 
 Run Docker compose using the following command:
@@ -15,5 +17,3 @@ Run Docker compose using the following command:
 ```bash
 make up
 ```
-
-Import Adlists

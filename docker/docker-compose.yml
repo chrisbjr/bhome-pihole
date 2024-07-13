@@ -9,10 +9,11 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
+      PIHOLE_UID: 1000
+      PIHOLE_GID: 1000
       TZ: 'Asia/Manila'
       WEBPASSWORD: '${WEBPASSWORD}'
-      DNS1: '1.1.1.1'
-      DNS2: '1.0.0.1'
+      PIHOLE_DNS_: '1.1.1.1;1.0.0.1'
       DNSSEC: 'true'
     volumes:
       - './etc-pihole:/etc/pihole'
