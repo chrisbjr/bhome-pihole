@@ -1,4 +1,2 @@
 .idea/
-docker/etc-dnsmasq.d/
-docker/etc-pihole/
 */.env
